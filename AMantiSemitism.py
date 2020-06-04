@@ -21,7 +21,7 @@ from sklearn.svm import SVC
 
 
 # Load dataset
-url = "tw_pol.txt"
+data = " "
 names = ['anti_semitism', 'No_anti_semitism'] 
 dataset = pandas.read_csv(url, names=names)
 
