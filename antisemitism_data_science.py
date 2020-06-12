@@ -148,26 +148,4 @@ for ad, texts in enumerate(c3['tweet']):
 	doc = nlp(texts)
 	#print(ad, doc)
 
-	#Dependece Tree
-	#for token in doc:
-		#print(token.text, ';', token.dep_, ';', token.head.text, ';', token.head.pos_,)
-
-	#POS tagging
-	#for token in doc:
-		#if token.tag == 'NOUN' or token.tag == 'VERB' or token.tag == 'ADJ' or token.tag == 'ADV': 
-		#print(token.text, ';', token.lemma_, ';', token.pos_, ';', token.tag_, ';', token.dep_, ';', token.shape_, ';', token.is_alpha, ';', token.is_stop)
-	
-	#NER annotation
-	for ent in doc.ents:
-		if (ent.label_ == 'EVENT') or (ent.label_ == 'FAC') or (ent.label_ == 'GPE') or (ent.label_ == 'LOC') or (ent.label_ == 'NORP') or (ent.label_ == 'ORG') or (ent.label_ == 'PERSON'):
-			#print(ad, ent.text, ent.label_)
-			lang = langid.classify(ent.text)
-			if 'en' in lang:
-				lemmatizer = WordNetLemmatizer()
-				ner.append(lemmatizer.lemmatize(ent.text))
-
-	ner = remove_repetidos(ner)
-	lista = [0 for j in range(len(ner))]
-	
-
-					
+			
